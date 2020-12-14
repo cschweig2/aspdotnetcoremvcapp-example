@@ -52,6 +52,9 @@ namespace FriendLetter // namespace needs to be the name of the project
                 // MVC route cannot be found. This is filler text.
                 await context.Response.WriteAsync("Hello World!");
             });
+
+            app.UseDeveloperExceptionPage();
+            // this will produce a friendly error report when Razor fails to load.
         }
     }
 }

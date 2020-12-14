@@ -24,5 +24,14 @@ namespace FriendLetter.Controllers
             return View(myLetterVariable);
         }
         // ActionResult is a built-in MVC class that handles rendering views
+
+        [Route("/postcard")]
+        public ActionResult Postcard(string recipient, string sender)
+        {
+            LetterVariable myLetterVariable = new LetterVariable();
+            myLetterVariable.Recipient = recipient;
+            myLetterVariable.Sender = sender;
+            return View(myLetterVariable);
+        }
     }
 }
