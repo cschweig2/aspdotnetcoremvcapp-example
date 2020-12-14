@@ -16,7 +16,7 @@ namespace FriendLetter // namespace needs to be the name of the project
     {
         // the constructor will create an interation of Startup that contains
         // specific settings and variables to run our project successfully
-        publc Startup(IHostingEnvironment env)
+        public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
@@ -48,6 +48,8 @@ namespace FriendLetter // namespace needs to be the name of the project
             // test that our Configure() method is working properly
             app.Run(async (context) =>
             {
+                // these lines of code tell our app to print "hello world" if a proper
+                // MVC route cannot be found. This is filler text.
                 await context.Response.WriteAsync("Hello World!");
             });
         }

@@ -1,6 +1,7 @@
+using FriendLetter.Models;
 using Microsoft.AspNetCore.Mvc;
-// imports functionality from the ASP.NET Core MVC package listed in our .csproj file
 
+// imports functionality from the ASP.NET Core MVC package listed in our .csproj file
 
 namespace FriendLetter.Controllers
 {
@@ -15,7 +16,13 @@ namespace FriendLetter.Controllers
         public string Goodbye() { return "Goodbye Friend."; }
 
         [Route("/")]
-        public ActionResult Letter() { return View(); }
-
+        public ActionResult Letter() 
+        {
+            LetterVariable myLetterVariable = new LetterVariable();
+            myLetterVariable.Recipient = "Lina";
+            myLetterVariable.Sender = "Jasmine";
+            return View(myLetterVariable);
+        }
+        // ActionResult is a built-in MVC class that handles rendering views
     }
 }
